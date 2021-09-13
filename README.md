@@ -2,7 +2,7 @@
 - 👀 I’m interested in web development, logic building and problem solving.
 - 🌱 I’m currently learning advance css and sass.
 - 💞️ I’m looking to collaborate on web application development projects and internships related to web applications.
-- 📫 How to reach me - gautam.engg.0556@gmail.com , gatam1999@gmail.com
+- 📫 How to reach me - gautam.engg.0556@gmail.com , gatam1999@gmail.com , www.linkedin.com/in/s-gautam-kumar-b197751a4
 
 <!---
 gkgautam995/gkgautam995 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
