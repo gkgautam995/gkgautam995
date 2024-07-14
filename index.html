@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gautam Kumar's Personal Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&family=League+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Gotu', sans-serif;
+            background: linear-gradient(135deg, #e0e0e0, #f7f7f7);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-family: 'League Mono', monospace;
+            color: white;
+        }
+        h2, h3 {
+            font-family: 'League Mono', monospace;
+            color: #b39ddb;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .header, .content, .footer {
+            padding: 20px;
+        }
+        .header {
+            background: #b39ddb;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .content > div {
+            margin: 10px 0;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .content > div:hover {
+            transform: translateY(-10px);
+        }
+        .parallax {
+            background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+            height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .footer {
+            text-align: center;
+            background: #b39ddb;
+            color: white;
+        }
+        .admin {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            padding: 20px;
+            z-index: 1000;
+        }
+        .admin input, .admin textarea {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .admin button {
+            background: #b39ddb;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        .animated-object {
+            animation: float 3s ease-in-out infinite;
+        }
+        .dotted-curve {
+            background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            width: 100%;
+            height: 150px;
+            margin: 20px 0;
+        }
+        .skill-item, .portfolio-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .skill-item span, .portfolio-item span {
+            font-weight: bold;
+        }
+        .icon {
+            color: #b39ddb;
+            margin-right: 10px;
+        }
+        .contact-social {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 !important;
+            justify-content: space-between;
+            background: #19199b00 !important;
+            box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+        }
+        
+        .contact-social > div {
+            flex: 1;
+            margin: 0px 0px 0px 0px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .contact {
+            margin-right: 10px !important;
+        }
+        .social {
+            margin-left: 10px !important;
+        }
+        .contact-social > div:hover {
+            transform: translateY(-10px);
+        }
+        
+        ul {
+            list-style: disc inside;
+            padding: 0;
+            margin: 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .skill-header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .skill-header span {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1><i class="fas fa-user-circle icon"></i> Gautam Kumar's Personal Page</h1>
+    </div>
+
+    <div class="content">
+        <!-- Biography Section -->
+        <div>
+            <h2><i class="fas fa-info-circle icon"></i> Biography</h2>
+            <p id="biography">Gautam Kumar is a passionate software engineer with a Bachelor's degree in Computer Science. He has a keen interest in developing scalable software solutions and working with the latest technologies to solve complex problems.</p>
+        </div>
+
+        <!-- Technical Skills Section -->
+        <div>
+            <h2><i class="fas fa-cogs icon"></i> Technical Skills</h2>
+            <div id="skills">
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fab fa-js icon"></i><span>JavaScript:</span>
+                    </div>
+                    <p>Experienced in building dynamic web applications using frameworks like React.js and Node.js.</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fab fa-python icon"></i><span>Python:</span>
+                    </div>
+                    <p>Proficient in scripting, data analysis, and web development using Django and Flask.</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fab fa-react icon"></i><span>React.js:</span>
+                    </div>
+                    <p>Skilled in creating interactive user interfaces and single-page applications.</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fab fa-node-js icon"></i><span>Node.js:</span>
+                    </div>
+                    <p>Knowledgeable in building scalable server-side applications and RESTful APIs.</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fas fa-docker icon"></i><span>Docker:</span>
+                    </div>
+                    <p>Experienced in containerization and orchestration of applications.</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fas fa-server icon"></i><span>Kubernetes:</span>
+                    </div>
+                    <p>Proficient in deploying, managing, and scaling containerized applications.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-social">
+            <!-- Contact Information Section -->
+            <div class="contact">
+                <h2><i class="fas fa-envelope icon"></i> Contact Information</h2>
+                <div>
+                    <p id="contact-info"><strong>Email: </strong><span>example@example.com</span></p>
+                    <p><strong>Phone: </strong><span>+123456789</span></p>
+                </div>
+            </div>    
+            
+            <!-- Social Media Links Section -->
+            <div class="social">
+                <h2><i class="fas fa-share-alt icon"></i> Social Media Links</h2>
+                <div>
+                    <ul id="social-media">
+                        <li><i class="fab fa-hackerrank icon"></i> <strong>HackerRank: </strong><span>https://www.hackerrank.com/username</span></li>
+                        <li><i class="fab fa-leanpub icon"></i> <strong>LeetCode: </strong><span>https://leetcode.com/username</span></li>
+                        <li><i class="fab fa-linkedin icon"></i> <strong>LinkedIn: </strong><span>https://www.linkedin.com/in/username</span></li>
+                        <li><i class="fab fa-servicestack icon"></i> <strong>ServiceNow: </strong><span>https://servicenow.com/username</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div>
+            <h2><i class="fas fa-briefcase icon"></i> Portfolio</h2>
+            <div id="portfolio">
+                <div class="portfolio-item">
+                    <span>Junior Developer:</span>
+                    <ul>
+                        <li>Assisted in developing web applications and components.</li>
+                        <li>Worked on bug fixes and small feature enhancements.</li>
+                        <li>Collaborated with senior developers to understand project requirements.</li>
+                        <li>Participated in code reviews and learned best practices.</li>
+                    </ul>
+                </div>
+                <div class="portfolio-item">
+                    <span>Senior Developer:</span>
+                    <ul>
+                        <li>Led the development of major features and functionalities.</li>
+                        <li>Optimized application performance and scalability.</li>
+                        <li>Reviewed code and mentored junior developers.</li>
+                        <li>Integrated third-party services and APIs.</li>
+                    </ul>
+                </div>
+                <div class="portfolio-item">
+                    <span>Tech Lead:</span>
+                    <ul>
+                        <li>Oversaw the entire software development lifecycle for projects.</li>
+                        <li>Architected and designed technical solutions to meet client needs.</li>
+                        <li>Managed a team of developers, assigning tasks and monitoring progress.</li>
+                        <li>Liaised with clients to gather requirements and provide technical solutions.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Gautam Kumar. All Rights Reserved.</p>
+    </div>
+</div>
+
+<div class="admin" id="admin-panel">
+    <h3>Admin Panel</h3>
+    <label for="bio-input">Biography:</label>
+    <textarea id="bio-input"></textarea>
+    <label for="skills-input">Technical Skills (comma-separated):</label>
+    <input type="text" id="skills-input">
+    <label for="contact-input">Contact Information:</label>
+    <textarea id="contact-input"></textarea>
+    <label for="portfolio-input">Portfolio (comma-separated):</label>
+    <input type="text" id="portfolio-input">
+    <label for="social-input">Social Media Links (comma-separated):</label>
+    <input type="text" id="social-input">
+    <button onclick="saveEdits()">Save</button>
+</div>
+
+<script>
+    // Toggle the Admin Panel visibility
+    function toggleAdminPanel() {
+        var adminPanel = document.getElementById('admin-panel');
+        if (adminPanel.style.display === 'none' || adminPanel.style.display === '') {
+            adminPanel.style.display = 'block';
+        } else {
+            adminPanel.style.display = 'none';
+        }
+    }
+
+    // Save the edits made in the Admin Panel
+    function saveEdits() {
+        // Save Biography
+        document.getElementById('biography').innerText = document.getElementById('bio-input').value;
+
+        // Save Technical Skills
+        document.getElementById('skills').innerHTML = document.getElementById('skills-input').value.split(',').map(skill => {
+            const [title, description] = skill.trim().split(':');
+            return `<div class="skill-item">
+                        <div class="skill-header">
+                            <i class="icon"></i><span>${title.trim()}:</span>
+                        </div>
+                        <p>${description.trim()}</p>
+                    </div>`;
+        }).join('');
+
+        // Save Contact Information
+        document.getElementById('contact-info').innerHTML = document.getElementById('contact-input').value;
+
+        // Save Portfolio
+        document.getElementById('portfolio').innerHTML = document.getElementById('portfolio-input').value.split(',').map(project => {
+            const [title, description] = project.trim().split(':');
+            return `<div class="portfolio-item"><span>${title.trim()}:</span><p>${description.trim()}</p></div>`;
+        }).join('');
+
+        // Save Social Media Links
+        document.getElementById('social-media').innerHTML = document.getElementById('social-input').value.split(',').map(link => {
+            const [platform, url] = link.trim().split(':');
+            return `<li><i class="icon"></i>${platform.trim()}: <span>${url.trim()}</span></li>`;
+        }).join('');
+    }
+</script>
+
+</body>
+</html>
